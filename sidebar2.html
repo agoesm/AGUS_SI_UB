@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device width, initial scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <title>Web</title>
+
+        <style>
+            .nav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: yellow;
+                opacity: .9;
+                overflow-x: hidden;
+                padding-top: 60px;
+                transition: 0.7s;
+            }
+            .nav a {
+                display: block;
+                padding: 20px 30px;
+                font-size: 25px;
+                text-decoration: none;
+                color: red;
+            }
+            .nav a:hover {
+                color: purple;
+                transition: 0.4s;
+            }
+            .nav .close {
+                position: absolute;
+                top: 0;
+                right: 22px;
+                margin-left: 50px;
+                font-size: 30px
+            }
+            .slide a {
+                color: #000;
+                font-size: 36px;
+            }
+            #content {
+                padding: 20px;
+                transition: margin-left 0.7s;
+                overflow: hidden;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+
+            <span class="slide">
+              <a href="#" onclick="openSlideMenu()">
+                <i class="fas fa-bars"></i>
+              </a>
+            </span>
+        
+            <div id="menu" class="nav">
+              <a href="#" class="close" onclick="closeSlideMenu()">
+                <i class="fas fa-times"></i>
+              </a>
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Portfolio</a>
+              <a href="#">Contact</a>
+            </div>
+
+        <div class="container">
+            <h1>Ini Kontent utama</h1>
+        </div>
+    </body>
+
+    <script>
+        function openSlideMenu(){
+          document.getElementById('menu').style.width = '250px';
+          document.getElementById('content').style.marginLeft = '250px';
+        }
+        function closeSlideMenu(){
+          document.getElementById('menu').style.width = '0';
+          document.getElementById('content').style.marginLeft = '0';
+        }
+    </script>
+</html>

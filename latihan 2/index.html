@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<style>
+		/*.kotakCustom {
+			background-color: orange;
+			width: 300px;
+			height: 300px;
+			margin-top: 300px;
+			margin: auto;
+			padding: 30px 30px 30px 30px;
+			border: 5px dashed yellow;
+			box-sizing: content-box;
+		}*/
+/*-----------------------------------------------*/
+		.mode {
+			width: 150px;
+			height: auto;
+			background-color: blue;
+			position: relative;
+			text-align: center;
+			right: 55px;
+			border-radius: 20px;
+			position: fixed;
+		}
+		.mode button {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.container {
+			width: 800px;
+			height: 1500px;
+			margin-top: 50px;
+			border: 2px solid black;
+			margin: auto;
+			position: relative;
+		}
+		.judul {
+			width: 800px;
+			height: 100px;
+			border: 1px solid black;
+			padding-left: 20px;
+			padding-top: 20px;
+			text-decoration-style: bold;
+			box-sizing: border-box;
+			text-shadow: 3px 2px red;
+		}
+		.lay_hit {
+			width: 200px;
+			height: 75px;
+			position: absolute;
+			background-color: black;
+			opacity: 0.2;
+			border-radius: 15px;
+			left: 5px;
+		}
+		.nav {
+			height: 50px;
+			border: 1px solid black;
+			padding-left: 15px;
+			padding-top: 15px;
+			box-sizing: border-box;
+			background-color: lightgreen;
+		}
+		.nav a {
+			text-decoration: none;
+			color: maroon;
+		}
+		.nav a:hover {
+			background-color: black;
+			color: white;
+		}
+		.panel_konten {
+			padding: 20px 20px 20px 20px;
+			width: 800px;
+			height: 500px;
+			overflow: auto;
+			box-sizing: border-box;
+		}
+		.panel_konten h2 {
+			text-shadow: 3px 2px green;
+		}
+		.banner {
+			background-image: url(https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+			height: 300px;
+			width: auto;
+			background-size: cover;
+		}
+		.logo{
+			float: left;
+			padding: 20px;
+			width: 300px;
+			height: 300px;
+		}
+		.panel-kotak{
+			height: 300px;
+			padding: 10px
+		}
+		.kotak {
+			background-color: lightgreen;
+			margin: 5px;
+			width: 180px;
+			height: 100px;
+			float: left;
+		}
+		.ribbon {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background-image: url(twit.png);
+			background-repeat: no-repeat;
+			display: inline-block;
+			text-indent: -9999px;
+			left: 691px;
+			margin-top: -16px;
+		}
+		.kotak_magic {
+			width: 150px;
+			height: 150px;
+			background-color: yellow;
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+		.cobaevent1 {
+			width: 150px;
+			height: 150px;			
+			background-color: green;
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+		.cobaevent2 {
+			width: 150px;
+			height: 150px;
+			background-color: yellow;
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- div class="kotakCustom">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div> -->
+
+	<div class="mode">
+		<button class="mode_siang" onclick="light_mode()">Mode Siang</button>
+		<button class="mode_malam" onclick="dark_mode()">Mode Malam</button>
+	</div>
+
+	<div class="container">
+		<a href="#" class="ribbon"></a>
+		<div class="judul">
+			<div class="lay_hit"></div>
+			<h1>My Website</h1>
+		</div>
+
+		<div class="nav">
+			<a href="#">Home</a>
+			<a href="#">Profil</a>
+			<a href="#">Contact</a>
+		</div>
+		<div class="banner"></div>
+
+		<div class="panel_konten">
+			<h2>Judul Artikel</h2>
+			<h3>Ditulis Oleh : Agus Miftah</h3>
+			<img class="logo" src="LOGO-FC.png">
+			<div class="konten" id="konten">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+
+		<div class="panel-kotak">
+			<div class="kotak">1<img width="100px" height="100px" src="LOGO-FC.png"></div>
+			<div class="kotak">2<img width="100px" height="100px" src="LOGO-FC.png"></div>
+			<div class="kotak">3<img width="100px" height="100px" src="LOGO-FC.png"></div>
+			<div class="kotak">4<img width="100px" height="100px" src="LOGO-FC.png"></div>
+			<div class="kotak">5<img width="100px" height="100px" src="LOGO-FC.png"></div>
+			<div class="kotak">6<img width="100px" height="100px" src="LOGO-FC.png"></div>
+			<div class="kotak">7<img width="100px" height="100px" src="LOGO-FC.png"></div>
+			<div class="kotak">8<img width="100px" height="100px" src="LOGO-FC.png"></div>
+		</div>
+	</div>
+
+	<div class="kotak_magic" id="cobaeventku" onmouseup="divkelakuan()" onmousedown="divkelakuan1()"></div>
+
+	<script>
+		function light_mode() {
+			document.getElementById('konten').style.backgroundColor="yellow";
+			document.getElementById('konten').style.color="black";
+		}
+
+		function dark_mode() {
+			document.getElementById('konten').style.backgroundColor="black";
+			document.getElementById('konten').style.color="white";
+		}
+
+		function divkelakuan() {
+			document.getElementById('cobaeventku').className="cobaevent1";
+		}
+
+		function divkelakuan1() {
+			document.getElementById('cobaeventku').className="cobaevent2";
+		}
+
+	</script>
+
+</body>
+</html>

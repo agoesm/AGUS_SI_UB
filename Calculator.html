@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		.container {
+			width: 400px;
+			height: 250px;
+			text-align: center;
+			background-color: lightgreen;
+		}
+		.judul {
+			margin-top: 30px;
+		}
+		.inputan {
+			padding: 5px;
+			margin: 5px;
+			background-color: orange;
+			border-radius: 15px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="judul">
+			<h1>KALKULATOR</h1>				
+		</div>
+		<div class="inputan">
+			<input type="text" id="input1" name="input1">
+		</div>
+		<div class="inputan">
+			<input type="text" id="input2" name="input2">
+		</div>
+		<br>
+		<input type="button" value="+" onclick="tambah()">
+		<input type="button" value="-" onclick="kurang()">
+		<input type="button" value="x" onclick="kali()">
+		<input type="button" value="/" onclick="bagi()">
+
+		<!-- <div class="result1"> -->
+			<h1 id="result"></h1>
+		<!-- </div> -->
+	</div>
+
+	<script>
+		function tambah() {
+			var bil1 = document.getElementById("input1").value;
+			var bil2 = document.getElementById("input2").value;
+			var angka1 = Number(bil1);
+			var angka2 = Number(bil2);
+
+			var hasil = angka1 + angka2;
+			document.getElementById("result").innerHTML = hasil;
+		}
+
+		function kurang() {
+			var bil1 = document.getElementById("input1").value;
+			var bil2 = document.getElementById("input2").value;
+			var angka1 = Number(bil1);
+			var angka2 = Number(bil2);
+
+			var hasil = angka1 - angka2;
+			document.getElementById("result").innerHTML = hasil;
+		}
+
+		function kali() {
+			var bil1 = document.getElementById("input1").value;
+			var bil2 = document.getElementById("input2").value;
+			var angka1 = Number(bil1);
+			var angka2 = Number(bil2);
+
+			var hasil = angka1 * angka2;
+			document.getElementById("result").innerHTML = hasil;
+		}
+
+		function bagi() {
+			var bil1 = document.getElementById("input1").value;
+			var bil2 = document.getElementById("input2").value;
+			var angka1 = Number(bil1);
+			var angka2 = Number(bil2);
+
+			var hasil = angka1 / angka2;
+			document.getElementById("result").innerHTML = hasil;
+		}
+
+	</script>
+
+</body>
+</html>
