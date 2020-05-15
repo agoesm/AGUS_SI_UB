@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="vue.js"></script>
+
+  ​<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  ​<script src="axios.min.js"></script>
+  <style>
+    .header {
+      height: 50px;
+      width: 100%;
+      background-color: green;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 5px;
+    }
+
+    .header h1 {
+      font-size: large;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: antiquewhite;
+    }
+
+    .mainproduct {
+      margin-top: 100px;
+      width: 70%;
+      height: 100%;
+      float: left;
+
+    }
+
+    .cart {
+      margin-top: 100px;
+      width: 30%;
+      height: 100%;
+      float: left;
+
+    }
+
+    .listproduk {
+      width: 150px;
+      height: 200px;
+      float: left;
+      margin: 5px 5px;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+
+    }
+
+    .thumbnail {
+      width: 100%;
+      height: 50%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1> VokasiPedia</h1>
+  </div>
+
+
+
+
+  <div id="container">
+
+
+    <div class="mainproduct">
+      <div class="listproduk" v-for="p in produk">
+
+        <div class="thumbnail">
+          <img v-bind:src="p.image" style="width: 100%; height: 100px;">
+        </div>
+
+        {{p.nama_produk}}
+        <br>
+        Rp {{p.harga}}
+
+        <button v-on:click="addCart(p.nama_produk, p.image, p.harga)" type="button">Beli</button>
+
+      </div>
+    </div>
+
+    <div class="cart">
+      Keranjang Belanja
+      <br>
+
+      <table>
+        <tr v-for="k in keranjang">
+          <td><img v-bind:src="k.image" width="125px" height="100px"></td>
+          <td>{{k.nama_produk}}</td>
+          <td>{{k.harga}}</td>
+          <td><button v-on:click="removeCart(index)" type="button">X</button></td>
+        </tr>
+      </table>
+
+      {{total}}
+
+    </div>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#container',
+      data: {
+        produk: [],
+        keranjangharga: [],
+        keranjang: [],
+        qty: 0
+      },
+
+      computed: {
+        total() {
+          return this.keranjangharga.reduce(function (sum, produk) {
+            return sum + produk
+          }, 0)
+        }
+      },
+
+      methods: {
+        addCart: function (nama_produk, image, harga) {
+          this.keranjang.push({
+            nama_produk: nama_produk,
+            harga: harga,
+            image: image
+          });
+          this.keranjangharga.push(harga);
+          this.qty += 1
+        },
+        removeCart: function (index) {
+          this.keranjang.splice(index, 1)
+          this.keranjangharga.splice(index, 1)
+          this.qty -= 1
+        },
+
+        upDate: function () {
+          axios.get('http://localhost:8080/GUI/Tugas/OnlineClass/VueJS_AjaxAxios_MySQL/api.php').then(response =>
+            this
+            .produk = response.data['result'])
+        }
+      },
+      mounted() {
+        this.upDate();
+        this.timer = setInterval(this.upDate, 1000)
+      }
+    })
+  </script>
+
+</body>
+
+</html>
